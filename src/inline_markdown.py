@@ -1,7 +1,8 @@
 from src.textnode import TextNode, TextType
+from src.htmlnode import ParentNode, LeafNode
 from re import findall
 from typing import List, Tuple
-from src.escape_handlers import hide_escape_chars, restore_chars, escape_map
+from src.escape_handlers import hide_escape_chars, restore_string, escape_map
 
 def split_nodes_delimiter(old_nodes: List[TextNode], delimiter: str, text_type: TextType) -> List[TextNode]:
     new_nodes = []
@@ -73,14 +74,83 @@ def split_nodes_link(old_nodes: List[TextNode]) -> List[TextNode]:
             new_nodes.append(TextNode(remaining_text,TextType.TEXT))
     return new_nodes
 
-def text_to_textnodes(text: str) -> List[TextNode]:
-    safe_text = hide_escape_chars(text,escape_map)
+def parse_inline_to_ast(text: str) -> list:
+    if not text:
+        return []
+
+    delimiters = [
+        ("**", "b"),
+        ("__", "b"),
+        ("*", "i"),
+        ("_", "i"),
+        ("`", "code")
+    ]
+
+    first_delim = None
+    first_idx = len(text)
+    first_tag = None
+
+    for delim, tag in delimiters:
+        idx = text.find(delim) 
+        if idx != -1 and idx < first_idx:
+            first_idx = idx
+            first_delim = delim
+            first_tag = tag
+
+    if first_delim is None:
+        clean_text = restore_string(text, escape_map)
+        return [LeafNode(tag=None, value=clean_text)]
+
+    closing_idx = text.find(first_delim, first_idx + len(first_delim))
+    if closing_idx == -1:
+        raise ValueError(f"Invalid Markdown: Unclosed '{first_delim}' tag.")
+
+    before_text = text[:first_idx]
+    inside_text = text[first_idx + len(first_delim) : closing_idx]
+    after_text = text[closing_idx + len(first_delim) :]
+
+    nodes = []
+
+    if before_text:
+        nodes.extend(parse_inline_to_ast(before_text))
+
+    if inside_text:
+        assert first_tag is not None
+        inside_children = parse_inline_to_ast(inside_text)
+        nodes.append(ParentNode(tag=first_tag, children=inside_children))
+
+    if after_text:
+        nodes.extend(parse_inline_to_ast(after_text))
+
+    return nodes
+
+def text_to_children_nodes(text: str) -> list:
+    safe_text = hide_escape_chars(text, escape_map)
+    
     nodes = [TextNode(safe_text, TextType.TEXT)]
     nodes = split_nodes_image(nodes)
     nodes = split_nodes_link(nodes)
-    nodes = split_nodes_delimiter(nodes, "**", TextType.BOLD)
-    nodes = split_nodes_delimiter(nodes, "__", TextType.BOLD)
-    nodes = split_nodes_delimiter(nodes, "*", TextType.ITALIC)
-    nodes = split_nodes_delimiter(nodes, "_", TextType.ITALIC)
-    nodes = split_nodes_delimiter(nodes, "`", TextType.CODE)
-    return restore_chars(nodes,escape_map)
+    
+    final_html_nodes = []
+    
+    for node in nodes:
+        if node.text_type == TextType.TEXT:
+            final_html_nodes.extend(parse_inline_to_ast(node.text))
+            
+        elif node.text_type == TextType.IMAGE:
+            clean_alt = restore_string(node.text or "", escape_map)
+            clean_url = restore_string(node.url or "", escape_map)
+            
+            final_html_nodes.append(
+                LeafNode(value="", tag="img", props={"src": clean_url, "alt": clean_alt})
+            )
+            
+        elif node.text_type == TextType.LINK:
+            clean_text = restore_string(node.text or "", escape_map)
+            clean_url = restore_string(node.url or "", escape_map)
+            
+            final_html_nodes.append(
+                LeafNode(value=clean_text, tag="a", props={"href": clean_url})
+            )
+
+    return final_html_nodes
