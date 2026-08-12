@@ -43,15 +43,9 @@ def hide_escape_chars (text: str, escape_map: Dict[str, str]) -> str:
         text = text.replace(key, value)
     return text
 
-def restore_chars (nodes: List[TextNode],escape_map: Dict[str,str]) -> List[TextNode]:
-    cleaned_nodes = []
-    for node in nodes:
-        if node.text_type == TextType.TEXT:
-            current_text = node.text
-            for key,value in escape_map.items():
-                litertal_char = key[1:]
-                current_text = current_text.replace(value,litertal_char)
-            cleaned_nodes.append(TextNode(current_text, TextType.TEXT, node.url))
-        else:
-            cleaned_nodes.append(node)
-    return cleaned_nodes
+def restore_string(text: str, escape_map: dict[str, str]) -> str:
+    current_text = text
+    for key, value in escape_map.items():
+        literal_char = key[1:] 
+        current_text = current_text.replace(value, literal_char)
+    return current_text
