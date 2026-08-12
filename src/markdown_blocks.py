@@ -1,7 +1,7 @@
 from enum import Enum
 from src.htmlnode import ParentNode, LeafNode, HTMLNode
-from src.inline_markdown import text_to_textnodes
-from src.textnode import text_node_to_html_node
+from src.inline_markdown import text_to_children_nodes
+#from src.textnode import text_node_to_html_node
 from typing import List
 
 class BlockType(Enum):
@@ -83,12 +83,8 @@ def markdown_to_html_node(markdown: str) -> ParentNode:
     return ParentNode("div", html_nodes)
  
 def text_to_children(text: str) -> List[HTMLNode]:
-    text_nodes = text_to_textnodes(text)
-    html_nodes = []
-    for text_node in text_nodes:
-        html_node = text_node_to_html_node(text_node)
-        html_nodes.append(html_node)
-    return html_nodes
+    return text_to_children_nodes(text)
+    
 
 def text_to_paragraph_node(block: str) -> ParentNode:
     child_nodes = text_to_children(block)

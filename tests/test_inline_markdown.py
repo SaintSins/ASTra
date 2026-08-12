@@ -1,6 +1,6 @@
 import unittest
 from src.textnode import TextNode, TextType
-from src.inline_markdown import split_nodes_delimiter, extract_markdown_images, extract_markdown_links, split_nodes_image, split_nodes_link, text_to_textnodes
+from src.inline_markdown import split_nodes_delimiter, extract_markdown_images, extract_markdown_links, split_nodes_image, split_nodes_link
 
 class TestInlineMarkdown(unittest.TestCase):
     def test_delim_bold_asterisk(self):
@@ -151,22 +151,6 @@ class TestInlineMarkdown(unittest.TestCase):
             ]
         )
     
-    def test_text_to_textnodes_sequential_mix(self):
-        text = "This is **bold** and *italic* and __more bold__ and _more italic_"
-        new_nodes = text_to_textnodes(text)
-        self.assertEqual(
-            new_nodes,
-            [
-                TextNode("This is ", TextType.TEXT),
-                TextNode("bold", TextType.BOLD),
-                TextNode(" and ", TextType.TEXT),
-                TextNode("italic", TextType.ITALIC),
-                TextNode(" and ", TextType.TEXT),
-                TextNode("more bold", TextType.BOLD),
-                TextNode(" and ", TextType.TEXT),
-                TextNode("more italic", TextType.ITALIC),
-            ]
-        )
     
     def test_delimiter_consecutive_empty_bold_asterisk(self):
         node = TextNode("This is **** empty bold", TextType.TEXT)
@@ -326,46 +310,3 @@ class TestInlineMarkdown(unittest.TestCase):
             ],
             new_nodes,
         )
-
-    def test_text_to_textnodes_with_img_and_link(self):
-        nodes = text_to_textnodes(
-            "This is **text** with an *italic* word and a `code block` and an ![image](https://i.imgur.com/zjjcJKZ.png) and a [link](https://boot.dev)"
-        )
-        self.assertListEqual(
-            [
-                TextNode("This is ", TextType.TEXT),
-                TextNode("text", TextType.BOLD),
-                TextNode(" with an ", TextType.TEXT),
-                TextNode("italic", TextType.ITALIC),
-                TextNode(" word and a ", TextType.TEXT),
-                TextNode("code block", TextType.CODE),
-                TextNode(" and an ", TextType.TEXT),
-                TextNode("image", TextType.IMAGE, "https://i.imgur.com/zjjcJKZ.png"),
-                TextNode(" and a ", TextType.TEXT),
-                TextNode("link", TextType.LINK, "https://boot.dev"),
-            ],
-            nodes,
-        )
-    
-    def test_text_to_textnodes_escape_integration(self) -> None:
-        text = "This is **bold** and an \\*escaped\\* asterisk."
-        
-        nodes = text_to_textnodes(text)
-        
-        self.assertEqual(len(nodes), 3)
-        self.assertEqual(nodes[0].text, "This is ")
-        self.assertEqual(nodes[0].text_type, TextType.TEXT)
-        self.assertEqual(nodes[1].text, "bold")
-        self.assertEqual(nodes[1].text_type, TextType.BOLD)
-        self.assertEqual(nodes[2].text, " and an *escaped* asterisk.")
-        self.assertEqual(nodes[2].text_type, TextType.TEXT)
-
-    def test_text_to_textnodes_escape_prevents_formatting(self) -> None:
-
-        text = "Show a literal \\_underscore\\_ here."
-
-        nodes = text_to_textnodes(text)
-        
-        self.assertEqual(len(nodes), 1)
-        self.assertEqual(nodes[0].text, "Show a literal _underscore_ here.")
-        self.assertEqual(nodes[0].text_type, TextType.TEXT)
