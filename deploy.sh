@@ -4,6 +4,6 @@ python3 -m src.main "/ASTra/"
 
 git add docs/
 git commit -m "Deploy: Update site content $(date +'%Y-%m-%d %H:%M')"
-git push origin nested-inline-parser
+git push origin main
 
 echo "Deployed to GitHub Pages!"
