@@ -1,14 +1,14 @@
 # Static Site Generator
 
-# ⚠️ LEGACY BRANCH: v1.0 Flat-List Parser
+# ⚠️ LEGACY BRANCH: Flat-List Parser
 
-> **Note:** This branch is deprecated. It contains the original architecture built as part of a backend curriculum. 
+> **Note:** This branch is deprecated. It contains initial version of the static site generator, which utilized a linear, flat-list parsing architecture. It has been archived for historical context. While functional for basic Markdown, the linear parsing approach struggled with deeply nested formatting. This limitation inspired the complete rewrite of the parsing engine using an Abstract Syntax Tree (AST), which can now be found on the main branch.
 > 
 > Active development has moved to the `main` branch, which features a completely rewritten recursive Abstract Syntax Tree (AST) engine and automated CI/CD pipelines.
 
 A custom, recursive Static Site Generator built in Python. This engine reads a directory tree of Markdown files, translates them into HTML, injects them into a base template, and outputs a complete, deploy-ready website. 
 
-Built as part of the backend development curriculum, this project specifically includes dynamic basepath routing to support seamless deployment to GitHub Pages.
+This project specifically includes dynamic basepath routing to support seamless deployment to GitHub Pages.
 
 ## Features
 
