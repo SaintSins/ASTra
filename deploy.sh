@@ -1,6 +1,6 @@
 #!/bin/bash
 # Builds the site for GitHub Pages and pushes it live
-python3 -m src.main "/Static-Site-Generator/"
+python3 -m src.main "/ASTra/"
 
 git add docs/
 git commit -m "Deploy: Update site content $(date +'%Y-%m-%d %H:%M')"

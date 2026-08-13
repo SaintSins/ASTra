@@ -1,6 +1,6 @@
-# Static Site Generator
+# ASTra: A Zero-Dependency Markdown Compiler & AST Engine
 
-A robust, Python-based static site generator that compiles raw Markdown into production-ready HTML. 
+A robust, Python-based text parsing engine that compiles raw Markdown into production-ready HTML. 
 
 Originally built to understand file systems and text parsing fundamentals, the core parsing engine was entirely rewritten to utilize a custom recursive **Abstract Syntax Tree (AST)** architecture. This project demonstrates modular software design, custom regex tokenization, and automated deployment workflows without relying on external libraries.
 
@@ -109,7 +109,7 @@ When your local draft is ready to be published to GitHub Pages, run:
 ```
 This script automates the entire CI/CD deployment pipeline:
 
-1. Rebuilds the HTML using your specific repository basepath (`"/Static-Site-Generator/"`) so all assets and links route correctly in the production environment.
+1. Rebuilds the HTML using your specific repository basepath (`"/ASTra/"`) so all assets and links route correctly in the production environment.
 
 2. Stages the freshly generated `docs/` directory.
 
