@@ -1,44 +1,21 @@
-# Tolkien Fan Club
+# The Manifesto
 
-![JRR Tolkien sitting](/images/tolkien.png)
+There is a fundamental difference between consuming fashion and cultivating a wardrobe. One is driven by fleeting trends; the other is built on geometry, raw materials, and an obsessive attention to detail.
 
-Here's the deal, **I like Tolkien**.
+Getting dressed is essentially an exercise in architecture. When you begin to obsess over exact proportions and how a garment actually drapes, you realize that true style doesn't come from hype or heavy branding. It comes from understanding how a piece is constructed, the weight of the fabric, and the specific vision of the person who designed it.
 
-> "I am in fact a Hobbit in all but size."
->
-> -- J.R.R. Tolkien
+This site is a personal archive documenting that process. It is a curated collection of thoughts on obscure brands, horology, and the mechanics of personal style—structured around three core pillars:
 
-## Blog posts
+---
 
-- [Why Glorfindel is More Impressive than Legolas](/blog/glorfindel)
-- [Why Tom Bombadil Was a Mistake](/blog/tom)
-- [The Unparalleled Majesty of "The Lord of the Rings"](/blog/majesty)
+### [Silhouettes](/ASTra/silhouettes/)
+Fashion is just applied geometry. This section focuses on the daily rotation, mastering fit, and dialing in exact proportions—building a wardrobe where drape and structure take priority over logos.
+- **Latest:** [The 5-Piece Capsule: Building a Foundation](/ASTra/silhouettes/capsule)
 
-## Reasons I like Tolkien
+### [Construction](/ASTra/construction/)
+An obsessive look at the raw materials that make up the pieces we wear. From the weight of Japanese selvedge denim to the patina of vegetable-tanned leather and the mechanics of automatic watch movements. 
+- **Latest:** [Why Fabric Weight Changes Everything](/ASTra/construction/fabric-weight)
 
-- You can spend years studying the legendarium and still not understand its depths
-- It can be enjoyed by children and adults alike
-- Disney _didn't ruin it_ (okay, but Amazon might have)
-- It created an entirely new genre of fantasy
-
-## My favorite characters (in order)
-
-1. Gandalf
-2. Bilbo
-3. Sam
-4. Glorfindel
-5. Galadriel
-6. Elrond
-7. Thorin
-8. Sauron
-9. Aragorn
-
-Here's what `elflang` looks like (the perfect coding language):
-
-```
-func main(){
-    fmt.Println("Aiya, Ambar!")
-}
-```
-
-Want to get in touch? [Contact me here](/contact).
+### [The Architects](/ASTra/architects/)
+The industry is driven by master builders. This series profiles the obscure designers, niche brand founders, and master horologists who prioritize craftsmanship over mass-market appeal. 
+- **Latest:** [The Quiet Influence of Niche Horology](/ASTra/architects/niche-horology)

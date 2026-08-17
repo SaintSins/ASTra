@@ -3,15 +3,42 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tolkien Fan Club</title>
-    <link href="/ASTra/index.css" rel="stylesheet" />
+    <title>The Manifesto</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   </head>
+  <body class="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen flex flex-col">
 
-  <body>
-    <article><div><h1>Tolkien Fan Club</h1><p><img src="/ASTra/images/tolkien.png" alt="JRR Tolkien sitting"></img></p><p>Here's the deal, <b>I like Tolkien</b>.</p><blockquote>"I am in fact a Hobbit in all but size."  -- J.R.R. Tolkien</blockquote><h2>Blog posts</h2><ul><li><a href="/ASTra/blog/glorfindel">Why Glorfindel is More Impressive than Legolas</a></li><li><a href="/ASTra/blog/tom">Why Tom Bombadil Was a Mistake</a></li><li><a href="/ASTra/blog/majesty">The Unparalleled Majesty of "The Lord of the Rings"</a></li></ul><h2>Reasons I like Tolkien</h2><ul><li>You can spend years studying the legendarium and still not understand its depths</li><li>It can be enjoyed by children and adults alike</li><li>Disney <i>didn't ruin it</i> (okay, but Amazon might have)</li><li>It created an entirely new genre of fantasy</li></ul><h2>My favorite characters (in order)</h2><ol><li>Gandalf</li><li>Bilbo</li><li>Sam</li><li>Glorfindel</li><li>Galadriel</li><li>Elrond</li><li>Thorin</li><li>Sauron</li><li>Aragorn</li></ol><p>Here's what <code>elflang</code> looks like (the perfect coding language):</p><pre><func main(){
-    fmt.Println("Aiya, Ambar!")
-}>code</func main(){
-    fmt.Println("Aiya, Ambar!")
-}></pre><p>Want to get in touch? <a href="/ASTra/contact">Contact me here</a>.</p></div></article>
-  </body>
+    <!-- Navbar -->
+    <nav class="w-full bg-white border-b border-gray-200">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/ASTra/" class="text-xl font-bold tracking-tight text-gray-900">Engineered Aesthetics</a>
+            <div class="space-x-6 text-sm font-medium text-gray-600">
+                <a href="/ASTra/" class="hover:text-black transition-colors">Home</a>
+                <a href="/ASTra/fashion/" class="hover:text-black transition-colors">Fashion</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow w-full max-w-4xl mx-auto px-6 py-16">
+        <!-- The 'prose' class tells Tailwind to automatically style your generated Markdown -->
+        <article class="prose prose-lg prose-gray max-w-none">
+            <div><h1>The Manifesto</h1><p>There is a fundamental difference between consuming fashion and cultivating a wardrobe. One is driven by fleeting trends; the other is built on geometry, raw materials, and an obsessive attention to detail.</p><p>Getting dressed is essentially an exercise in architecture. When you begin to obsess over exact proportions and how a garment actually drapes, you realize that true style doesn't come from hype or heavy branding. It comes from understanding how a piece is constructed, the weight of the fabric, and the specific vision of the person who designed it.</p><p>This site is a personal archive documenting that process. It is a curated collection of thoughts on obscure brands, horology, and the mechanics of personal style—structured around three core pillars:</p><p>---</p><h3><a href="/ASTra/silhouettes/">Silhouettes</a>
+Fashion is just applied geometry. This section focuses on the daily rotation, mastering fit, and dialing in exact proportions—building a wardrobe where drape and structure take priority over logos.
+- <b>Latest:</b> <a href="/ASTra/silhouettes/capsule">The 5-Piece Capsule: Building a Foundation</a></h3><h3><a href="/ASTra/construction/">Construction</a>
+An obsessive look at the raw materials that make up the pieces we wear. From the weight of Japanese selvedge denim to the patina of vegetable-tanned leather and the mechanics of automatic watch movements. 
+- <b>Latest:</b> <a href="/ASTra/construction/fabric-weight">Why Fabric Weight Changes Everything</a></h3><h3><a href="/ASTra/architects/">The Architects</a>
+The industry is driven by master builders. This series profiles the obscure designers, niche brand founders, and master horologists who prioritize craftsmanship over mass-market appeal. 
+- <b>Latest:</b> <a href="/ASTra/architects/niche-horology">The Quiet Influence of Niche Horology</a></h3></div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-white border-t border-gray-200 mt-auto">
+        <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-gray-500">
+            &copy; 2026 SaintSins. Powered by ASTra.
+        </div>
+    </footer>
+
+  
 </html>

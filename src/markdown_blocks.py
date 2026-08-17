@@ -1,7 +1,6 @@
 from enum import Enum
 from src.htmlnode import ParentNode, LeafNode, HTMLNode
 from src.inline_markdown import text_to_children_nodes
-#from src.textnode import text_node_to_html_node
 from typing import List
 
 class BlockType(Enum):
@@ -85,7 +84,6 @@ def markdown_to_html_node(markdown: str) -> ParentNode:
 def text_to_children(text: str) -> List[HTMLNode]:
     return text_to_children_nodes(text)
     
-
 def text_to_paragraph_node(block: str) -> ParentNode:
     child_nodes = text_to_children(block)
     return ParentNode("p", child_nodes)
