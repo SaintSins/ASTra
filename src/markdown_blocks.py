@@ -10,6 +10,7 @@ class BlockType(Enum):
     QUOTE = "quote"
     UNORDERED_LIST = "unordered_list"
     ORDERED_LIST = "ordered_list"
+    HORIZONTAL_RULE = "horizontal_rule"
     
 def markdown_to_blocks(markdown: str) -> List[str]:
     raw_blocks = markdown.split('\n\n')
@@ -29,6 +30,9 @@ def block_to_block_type(block: str) -> BlockType:
         
     if block.startswith("```") and block.endswith("```"):
         return BlockType.CODE
+
+    if block.startswith("---"):
+        return BlockType.HORIZONTAL_RULE
         
     is_quote = True
     for line in lines:
@@ -77,6 +81,8 @@ def markdown_to_html_node(markdown: str) -> ParentNode:
                 html_nodes.append(text_to_unlist_node(block))
             case BlockType.ORDERED_LIST:
                 html_nodes.append(text_to_olist_node(block))
+            case BlockType.HORIZONTAL_RULE:
+                html_nodes.append(text_to_hr_node())
             case _:
                 raise Exception("Invalid Block")
     return ParentNode("div", html_nodes)
@@ -127,6 +133,9 @@ def text_to_quote_node(block: str) -> ParentNode:
         cleaned_str.append(cleaned_text)
     child_node = text_to_children(" ".join(cleaned_str))
     return ParentNode("blockquote", child_node)
+
+def text_to_hr_node() -> LeafNode:
+    return LeafNode("","hr")
 
 def extract_title(markdown: str) -> str:
     lines = markdown.split("\n")
