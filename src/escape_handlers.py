@@ -1,6 +1,5 @@
 from enum import Enum
-from typing import List,Dict
-from src.textnode import TextNode, TextType
+from typing import Dict
 
 class EscapeMarker(Enum):
     # The Core Inline
@@ -43,7 +42,7 @@ def hide_escape_chars (text: str, escape_map: Dict[str, str]) -> str:
         text = text.replace(key, value)
     return text
 
-def restore_string(text: str, escape_map: dict[str, str]) -> str:
+def restore_string(text: str, escape_map: Dict[str, str]) -> str:
     current_text = text
     for key, value in escape_map.items():
         literal_char = key[1:] 
