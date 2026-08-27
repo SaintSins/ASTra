@@ -4,32 +4,104 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ Title }}</title>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <!--Custom Tailwind-->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              editorial: {
+                bg: '#F9F9F8',      /* Warm, premium off-white */
+                text: '#1C1C1C',    /* Deep charcoal */
+                muted: '#8A8A8A',   /* Soft grey */
+                border: '#EAEAEA'
+              }
+            },
+            typography: (theme) => ({
+              editorial: {
+                css: {
+                  '--tw-prose-body': theme('colors.editorial.text'),
+                  '--tw-prose-headings': theme('colors.editorial.text'),
+                  '--tw-prose-links': theme('colors.editorial.text'),
+                  '--tw-prose-hr': theme('colors.editorial.border'),
+                  fontFamily: theme('fontFamily.sans'),
+                  blockquote: {
+                      borderLeftWidth: '2px',
+                      borderColor: theme('colors.editorial.text'),
+                      fontStyle: 'italic',
+                      fontWeight: '400',
+                      paddingLeft: '1.5em',
+                    },
+                  a: {
+                        textDecoration: 'none',
+                        '&:hover': {
+                        color: theme('colors.editorial.muted'),
+                        }
+                    },
+                  h1: {
+                    fontFamily: theme('fontFamily.serif'),
+                    fontWeight: '400',
+                    letterSpacing: '-0.02em',
+                  },
+                  h2: {
+                    fontFamily: theme('fontFamily.sans'),
+                    fontWeight: '400',
+                  },
+                  h3: {
+                    fontFamily: theme('fontFamily.sans'),
+                    fontWeight: '500',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                    fontSize: '1.25rem',
+                  },
+                  hr: {
+                    borderColor: theme('colors.editorial.border'),
+                    borderTopWidth: '1px',
+                    marginTop: '3em',
+                    marginBottom: '3em',
+                  },
+                },
+              },
+            }),
+          }
+        }
+      }
+    </script>
   </head>
-  <body class="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen flex flex-col">
+  <body class="bg-editorial-bg text-editorial-text font-sans antialiased min-h-screen flex flex-col selection:bg-editorial-text selection:text-editorial-bg">
 
     <!-- Navbar -->
-    <nav class="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
+    <nav class="sticky top-0 z-50 w-full bg-editorial-bg border-b border-editorial-border">
         <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/ASTra/" class="text-xl font-bold tracking-tight text-gray-900">Engineered Aesthetics</a>
-            <div class="space-x-6 text-sm font-medium text-gray-600">
-                <a href="/ASTra/" class="hover:text-black transition-colors">Home</a>
-                <a href="/ASTra/fashion/" class="hover:text-black transition-colors">Fashion</a>
+            <a href="/ASTra/" class="text-xl font-serif tracking-tight text-editorial-text">Engineered Aesthetics</a>
+            <div class="space-x-6 text-sm font-sans font-medium text-editorial-muted">
+                <a href="/ASTra/Silhouttes" class="hover:text-editorial-text transition-colors">Silhouttes</a>
+                <a href="/ASTra/fashion/Construction" class="hover:text-editorial-text transition-colors">Construction</a>
+                <a href="/ASTra/fashion/The Architects" class="hover:text-editorial-text transition-colors">The Architects</a>
             </div>
         </div>
     </nav>
 
     <!-- Main Content Area -->
-    <main class="flex-grow w-full max-w-4xl mx-auto px-6 py-16">
+    <main class="flex-grow w-full max-w-3xl mx-auto px-6 py-16 md:py-24">
         <!-- The 'prose' class tells Tailwind to automatically style your generated Markdown -->
-        <article class="prose prose-lg prose-gray max-w-none">
+        <article class="prose prose-editorial prose-lg ">
             {{ Content }}
         </article>
     </main>
 
     <!-- Footer -->
-    <footer class="w-full bg-white border-t border-gray-200 mt-auto">
-        <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-gray-500">
+    <footer class="w-full bg-editorial-bg border-t border-editorial-border mt-auto">
+        <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm font-sans text-editorial-muted">
             &copy; 2026 SaintSins. Powered by ASTra.
         </div>
     </footer>
