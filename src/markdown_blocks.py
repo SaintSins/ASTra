@@ -14,12 +14,34 @@ class BlockType(Enum):
     
 def markdown_to_blocks(markdown: str) -> List[str]:
     raw_blocks = markdown.split('\n\n')
+    
     cleaned_blocks = []
+    current_code_block = []
+    in_code_block = False
+    
     for block in raw_blocks:
         stripped_block = block.strip()
         if stripped_block == "":
             continue
-        cleaned_blocks.append(stripped_block)
+            
+        if not in_code_block:
+            if stripped_block.startswith("```") and not stripped_block.endswith("```"):
+                in_code_block = True
+                current_code_block.append(block)
+            else:
+                cleaned_blocks.append(stripped_block)
+                
+        else:
+            current_code_block.append(block)
+            if stripped_block.endswith("```"):
+                in_code_block = False
+                glued_block = "\n\n".join(current_code_block).strip()
+                cleaned_blocks.append(glued_block)
+                current_code_block = []
+                
+    if current_code_block:
+        cleaned_blocks.append("\n\n".join(current_code_block).strip())
+        
     return cleaned_blocks
 
 def block_to_block_type(block: str) -> BlockType:
@@ -122,8 +144,8 @@ def text_to_olist_node(block: str) -> ParentNode:
 
 def text_to_code_node(block: str) -> ParentNode:
     cleaned_text = block.strip("`").strip()
-    code_node = LeafNode("code", cleaned_text)
-    return ParentNode("pre", [code_node])
+    code_node = LeafNode(tag="code", value=cleaned_text)
+    return ParentNode(tag="pre", children= [code_node])
 
 def text_to_quote_node(block: str) -> ParentNode:
     lines = block.split("\n")
