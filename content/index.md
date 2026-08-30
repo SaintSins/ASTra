@@ -6,19 +6,19 @@ Getting dressed is essentially an exercise in architecture. When you begin to ob
 
 This site is a personal archive documenting that process. It is a curated collection of thoughts on obscure brands, horology, and the mechanics of personal style—structured around three core pillars:
 
-### [Silhouettes](/ASTra/silhouettes/)
+### [Silhouettes](/silhouettes/)
 
 Fashion is just applied geometry. This section focuses on the new launches, daily rotation, mastering fit, and dialing in exact proportions—building a wardrobe where drape and structure take priority over logos.
 
 >**Latest:** [Nike Remasters the Air Force 1 to its Early-2000s Glory](/silhouettes/airforce)
 
-### [Construction](/ASTra/construction/)
+### [Construction](/construction/)
 
 An obsessive look at the raw materials and process that make up the pieces we wear. 
 
 >**Latest:** [Zero Gravity Style: How Titanium Conquered Fashion](/construction/titanium)
 
-### [The Architects](/ASTra/architects/)
+### [The Architects](/architects/)
 
 The industry is driven by master builders. This series profiles the obscure designers, niche brand founders, and masters who prioritize craftsmanship over mass-market appeal. 
 
