@@ -13,6 +13,7 @@ Originally built to understand file systems and text parsing fundamentals, the c
 * **Static Asset Management:** Safely wipes and recreates the output directory on every build, cleanly copying all images, CSS, and static assets to guarantee a fresh build state.
 * **Environment-Aware Path Routing:** Dynamically rewrites absolute paths (`href` and `src`) based on CLI arguments to support both local web servers and GitHub Pages sub-directory hosting. 
 * **Automated Deployment Workflows:** Includes custom `build.sh` and `deploy.sh` scripts for sandbox testing and one-click production deployments to GitHub.
+* **Modular Tailwind Theming:** Built with easily editable semantic variables and typography overrides for quick design adjustments.
 
 ## Differences: Legacy vs. AST Engine
 
