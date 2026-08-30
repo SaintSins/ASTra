@@ -4,6 +4,8 @@ There is a fundamental difference between consuming fashion and cultivating a wa
 
 Getting dressed is essentially an exercise in architecture. When you begin to obsess over exact proportions and how a garment actually drapes, you realize that true style doesn't come from hype or heavy branding. It comes from understanding how a piece is constructed, the weight of the fabric, and the specific vision of the person who designed it.
 
+---
+
 This site is a personal archive documenting that process. It is a curated collection of thoughts on obscure brands, horology, and the mechanics of personal style—structured around three core pillars:
 
 ### [Silhouettes](/silhouettes/)
