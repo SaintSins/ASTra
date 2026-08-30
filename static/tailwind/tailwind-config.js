@@ -1,4 +1,5 @@
 tailwind.config = {
+  darkMode: 'class',
     theme: {
       extend: {
         fontFamily: {
@@ -7,10 +8,16 @@ tailwind.config = {
         },
           colors: {
             editorial: {
+              //Light Mode
               bg: '#F9F9F8',      /* Warm, premium off-white */
               text: '#1C1C1C',    /* Deep charcoal */
               muted: '#8A8A8A',   /* Soft grey */
-              border: '#EAEAEA'
+              border: '#EAEAEA',
+              //Dark Mode
+              darkBg: '#0A0A0A',
+              darkText: '#EDEDED',
+              darkMuted: '#737373',
+              darkBorder: '#2A2A2A'
             }
           },
           typography: (theme) => ({
@@ -20,6 +27,8 @@ tailwind.config = {
                 '--tw-prose-headings': theme('colors.editorial.text'),
                 '--tw-prose-links': theme('colors.editorial.text'),
                 '--tw-prose-hr': theme('colors.editorial.border'),
+                '--tw-prose-quote': theme('colors.editorial.text'),
+                '--tw-prose-quote-borders': theme('colors.editorial.text'),
                 fontFamily: theme('fontFamily.sans'),
 
                 img: {
@@ -65,12 +74,21 @@ tailwind.config = {
                 'code::after': { content: '""' },
 
                 blockquote: {
+                    quotes: 'none',
                     borderLeftWidth: '2px',
-                    borderColor: theme('colors.editorial.text'),
+                    borderColor: 'var(--tw-prose-quote-borders)',
                     fontStyle: 'normal',
                     fontWeight: '400',
                     paddingLeft: '1.5em',
+                    color: 'var(--tw-prose-quote)'
                   },
+
+                'blockquote p:first-of-type::before': false,
+                'blockquote p:last-of-type::after': false,
+                'blockquote p': { color: 'var(--tw-prose-quotes)' },
+                'blockquote i': { color: 'var(--tw-prose-quotes)' },
+                'blockquote b': { color: 'var(--tw-prose-quotes)' },
+                
                 a: {
                       textDecoration: 'none',
                       '&:hover': {
@@ -101,7 +119,17 @@ tailwind.config = {
                 },
               },
             },
-          }),
-        }
+          invert: {
+              css: {
+                '--tw-prose-body': theme('colors.editorial.darkText'),
+                '--tw-prose-headings': theme('colors.editorial.darkText'),
+                '--tw-prose-links': theme('colors.editorial.darkText'),
+                '--tw-prose-hr': theme('colors.editorial.darkBorder'),
+                '--tw-prose-quote': theme('colors.editorial.darkText'),
+                '--tw-prose-quote-borders': theme('colors.editorial.darkText'),
+              },
+          },
+        }),
       }
     }
+   }
