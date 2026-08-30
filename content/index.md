@@ -10,16 +10,16 @@ This site is a personal archive documenting that process. It is a curated collec
 
 Fashion is just applied geometry. This section focuses on the new launches, daily rotation, mastering fit, and dialing in exact proportions—building a wardrobe where drape and structure take priority over logos.
 
->**Latest:** [The 5-Piece Capsule: Building a Foundation](/ASTra/silhouettes/capsule)
+>**Latest:** [Nike Remasters the Air Force 1 to its Early-2000s Glory](/silhouettes/airforce)
 
 ### [Construction](/ASTra/construction/)
 
-An obsessive look at the raw materials that make up the pieces we wear. From the weight of Japanese selvedge denim to the patina of vegetable-tanned leather and the mechanics of automatic watch movements. 
+An obsessive look at the raw materials and process that make up the pieces we wear. 
 
-↳ **Latest:** [Why Fabric Weight Changes Everything](/ASTra/construction/fabric-weight)
+>**Latest:** [Zero Gravity Style: How Titanium Conquered Fashion](/construction/titanium)
 
 ### [The Architects](/ASTra/architects/)
 
 The industry is driven by master builders. This series profiles the obscure designers, niche brand founders, and masters who prioritize craftsmanship over mass-market appeal. 
 
-↳ **Latest:** [The Quiet Influence of Niche Horology](/ASTra/architects/niche-horology)
+>**Latest:** [How One Designer Rewrote the Rules of Design](/architects/virgil)
