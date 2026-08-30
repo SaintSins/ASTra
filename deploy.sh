@@ -3,7 +3,7 @@
 python3 -m src.main "/ASTra/"
 
 git add docs/
-git commit -m "build: Update site content"
+git commit -m "docs: update site content"
 git push origin main
 
 echo "Deployed to GitHub Pages!"
