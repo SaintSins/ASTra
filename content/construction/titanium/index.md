@@ -2,7 +2,7 @@
 
 ![Titanium](/images/titanium.png)
 
-**Titanium** _is_ quietly taking over jewelry boxes, watch winders, and runway accessories, pulling double duty as both an aerospace staple and a fashion designer's secret weapon. It used to be that luxury meant heavy—thick gold bands, weighty platinum necklaces, and stainless steel watches that practically gave you a workout. Now, the flex is wearing massive, intricate statement pieces that feel like absolutely nothing at all.
+**Titanium** quietly taking over jewelry boxes, watch winders, and runway accessories, pulling double duty as both an aerospace staple and a fashion designer's secret weapon. It used to be that luxury meant heavy—thick gold bands, weighty platinum necklaces, and stainless steel watches that practically gave you a workout. Now, the flex is wearing massive, intricate statement pieces that feel like absolutely nothing at all.
 
 Designers and watchmakers are leaning into the metal for three very practical reasons:
 
