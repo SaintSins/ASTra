@@ -22,39 +22,38 @@
   <body class="bg-editorial-bg text-editorial-text dark:bg-editorial-darkBg dark:text-editorial-darkText font-sans antialiased min-h-screen flex flex-col selection:bg-editorial-text selection:text-editorial-bg dark:selection:bg-editorial-darkText dark:selection:text-editorial-darkBg transition-colors duration-300">
 
     <!-- Navbar -->
-    <nav class="sticky top-0 z-50 w-full bg-editorial-bg border-b border-editorial-border dark:bg-editorial-darkBg dark:border-editorial-darkBorder">
-        <div class="max-w-4xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
-            <a href="/ASTra/" class="text-xl font-serif tracking-tight text-editorial-text dark:text-editorial-darkText">Engineered Aesthetics</a>
-            <div class="flex items-center gap-x-4 sm:gap-x-6 text-sm font-sans font-medium text-editorial-muted">
-                <a href="/ASTra/silhouettes" class="inline-flex items-center h-8 hover:text-editorial-text dark:hover:text-editorial-darkText transition-colors">Silhouettes</a>
-                <a href="/ASTra/construction" class="inline-flex items-center h-8 hover:text-editorial-text dark:hover:text-editorial-darkText transition-colors">Construction</a>
-                <a href="/ASTra/architects" class="inline-flex items-center h-8 hover:text-editorial-text dark:hover:text-editorial-darkText transition-colors">The Architects</a>
-                <button 
-                    id="theme-toggle" 
-                    type="button" 
-                    aria-label="Toggle theme"
-                    class="inline-flex items-center justify-center h-8 w-8 border border-editorial-border dark:border-editorial-darkBorder text-editorial-text dark:text-editorial-darkText hover:bg-editorial-border/30 dark:hover:bg-editorial-darkBorder/40 transition-colors"
-                >
-                    <!-- Moon Icon: Shown in Light Mode (Click to go dark) -->
-                    <svg class="inline dark:hidden w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-                    </svg>
+    <nav class="sticky top-0 z-50 w-full bg-editorial-bg border-b border-editorial-border dark:bg-editorial-darkBg dark:border-editorial-darkBorder transition-colors duration-300">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex flex-wrap justify-between sm:justify-start items-center">
+        <a href="/ASTra/" class="order-1 sm:mr-auto text-xl font-serif tracking-tight text-editorial-text dark:text-editorial-darkText">Engineered Aesthetics</a>
 
-                    <!-- Sun Icon: Shown in Dark Mode (Click to go light) -->
-                    <svg class="hidden dark:inline w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="4"></circle>
-                        <path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>
-                    </svg>
-            </button>
-            </div>
+        <button 
+            id="theme-toggle" 
+            type="button" 
+            aria-label="Toggle theme"
+            class="order-2 sm:order-3 sm:ml-6 inline-flex items-center justify-center h-8 w-8 border border-editorial-border dark:border-editorial-darkBorder text-editorial-text dark:text-editorial-darkText hover:bg-editorial-border/30 dark:hover:bg-editorial-darkBorder/40 transition-colors"
+        >
+            <svg class="inline dark:hidden w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+            <svg class="hidden dark:inline w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+        </button>
+
+        <div class="order-3 sm:order-2 w-full sm:w-auto mt-4 sm:mt-0 flex items-center justify-between sm:justify-start gap-x-4 sm:gap-x-6 text-sm font-sans font-medium text-editorial-muted">
+            <a href="/ASTra/silhouettes" class="inline-flex items-center h-8 hover:text-editorial-text dark:hover:text-editorial-darkText transition-colors">Silhouettes</a>
+            <a href="/ASTra/construction" class="inline-flex items-center h-8 hover:text-editorial-text dark:hover:text-editorial-darkText transition-colors">Construction</a>
+            <a href="/ASTra/architects" class="inline-flex items-center h-8 hover:text-editorial-text dark:hover:text-editorial-darkText transition-colors">The Architects</a>
         </div>
-    </nav>
+
+    </div>
+</nav>
 
     <!-- Main Content Area -->
     <main class="flex-grow w-full max-w-3xl mx-auto px-6 py-16 md:py-24">
-        <!-- The 'prose' class tells Tailwind to automatically style your generated Markdown -->
         <article class="prose prose-editorial prose-lg dark:prose-invert">
-            <div><h1>Silhouettes</h1><blockquote><b>01-09-2026</b> - <a href="/ASTra/silhouettes/airforce">Nike Remasters the Air Force 1 to its Early-2000s Glory</a></blockquote></div>
+            <div><h1>Silhouettes</h1><blockquote><b>01-Sept-2026</b> - <a href="/ASTra/silhouettes/airforce">Nike Remasters the Air Force 1 to its Early-2000s Glory</a></blockquote></div>
         </article>
     </main>
 
